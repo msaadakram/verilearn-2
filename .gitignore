@@ -1,0 +1,15 @@
+node_modules/
+.env
+npm-debug.log*
+yarn-error.log
+*.log
+*.zip
+*.pdf
+*.mp3
+*.jpeg
+*.jpg
+*.png
+.logs/
+frontend/node_modules/
+frontend/.next/
+cnic-ocr-service/venv/

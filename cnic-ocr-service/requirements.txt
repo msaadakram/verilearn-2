@@ -1,0 +1,19 @@
+# Core web framework
+Flask>=3.0.0
+gunicorn>=22.0.0
+python-dotenv>=1.0.0
+
+# Image processing
+numpy>=1.26.0
+opencv-python-headless>=4.8.0
+Pillow>=10.0.0
+
+# YOLOv8 — CNIC card detection
+ultralytics>=8.0.0
+
+# PaddleOCR — text extraction (primary backend)
+paddlepaddle>=2.6.0
+paddleocr>=2.7.0
+
+# EasyOCR — fallback backend (kept in case PaddleOCR fails)
+easyocr>=1.7.1
