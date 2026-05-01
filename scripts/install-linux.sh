@@ -136,6 +136,11 @@ install_base_packages() {
     python3-dev
     openssl
     netcat-openbsd
+    libgl1
+    libglib2.0-0
+    libsm6
+    libxext6
+    libxrender1
   )
 
   for package in "${packages[@]}"; do
