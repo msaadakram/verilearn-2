@@ -49,6 +49,7 @@ Use `backend/.env.example` as reference:
 Use `frontend/.env.example`:
 
 - `NEXT_PUBLIC_API_BASE_URL=http://localhost:5000`
+- `NEXT_PUBLIC_AGORA_APP_ID=...` (optional, only needed for video calling)
 
 ## Run All Services (Recommended)
 
@@ -80,6 +81,30 @@ That installer:
 - installs backend, frontend, and OCR dependencies
 - optionally creates/pushes a GitHub repo
 - launches the full stack at the end
+
+## Linux one-shot setup
+
+If you are on Linux and want the machine to bootstrap itself from scratch, use:
+
+```bash
+chmod +x scripts/linux-install-run.sh
+./scripts/linux-install-run.sh
+```
+
+That installer:
+
+- installs apt prerequisites and a compatible Node.js release
+- starts MongoDB locally with `mongod` or Docker when available
+- creates missing `.env` files from the examples
+- installs backend, frontend, and OCR dependencies
+- optionally creates/pushes a GitHub repo
+- launches the full stack at the end
+
+If you only want the install step, keep using:
+
+```bash
+./scripts/install-linux.sh --no-start
+```
 
 If you only want the services to start after everything is installed, keep using:
 

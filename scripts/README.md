@@ -1,6 +1,6 @@
-# macOS bootstrap helper
+# bootstrap helpers
 
-This folder contains the one-shot macOS installer for the full Verilearn stack.
+This folder contains one-shot installers for the full Verilearn stack on both macOS and Linux.
 
 ## What it does
 
@@ -13,12 +13,23 @@ This folder contains the one-shot macOS installer for the full Verilearn stack.
 - optionally creates/pushes a GitHub repo
 - starts the full stack with `run-all.sh`
 
+The Linux installer follows the same flow with apt/NodeSource and starts MongoDB via a local `mongod` process or Docker when available.
+
 ## Usage
 
 ```bash
 chmod +x scripts/install-macos.sh
 ./scripts/install-macos.sh
 ```
+
+Linux:
+
+```bash
+chmod +x scripts/linux-install-run.sh
+./scripts/linux-install-run.sh
+```
+
+Use `scripts/install-linux.sh --no-start` if you want setup without launching the services.
 
 ## Useful flags
 
@@ -27,6 +38,11 @@ chmod +x scripts/install-macos.sh
 - `--repo-url <url>` — set a different Git remote URL
 - `--repo-slug <owner/repo>` — repository slug used with `gh repo create`
 - `--force` — overwrite generated `.env` files
+
+Linux-only flags:
+
+- `--mongo-uri <uri>` — write a custom MongoDB URI into `backend/.env`
+- `--skip-mongo` — skip local MongoDB startup if you already have a running database
 
 ## Notes
 
